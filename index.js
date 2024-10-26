@@ -122,7 +122,7 @@ const ctx = document.getElementById('myChart');
     ]
     },
     options: {
-        responsive: true, 
+        responsive: false, 
         scales: {
           x: {
             title: {
