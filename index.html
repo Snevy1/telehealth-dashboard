@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=
+    "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+              rel="stylesheet">
+              <link rel="stylesheet" href="./index.css">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>Hospital dashboard</title>
+</head>
+<body style="background-color: #EDEDED">  
+    <header class="mt-2 m-auto p-2">
+       <div class="logo">
+        <img src="./assets/TestLogo.svg" alt="">
+
+       </div>
+       <div class="navigation  ">
+        <nav class="mt-3">
+            <ul class="flex gap-5">
+                <li class="flex gap-1 p-1">
+                    <span class="icon mt-1">
+                        <img src="./assets/home_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+
+                    </span>
+                    <a href="">Overview</a>
+                </li>
+                <li class="flex gap-1 p-1" style="background-color: #01F0D0; border-radius: 15px;">
+                    <span class="icon mt-1">
+                        <img src="./assets/group_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+
+                    </span>
+                    <a href="">Patients</a>
+                </li>
+                <li class="flex gap-1">
+                    <span class="icon mt-1">
+                        <img src="./assets/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+                    </span>
+                    <a href="">Schedule</a>
+                </li>
+                <li class="flex gap-1">
+                    <span class="icon mt-1">
+                        <img src="./assets/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+                    </span>
+                    <a href="">Message</a>
+                </li>
+                <li class="flex gap-1">
+                    <span class="icon mt-1">
+                        <img src="./assets/credit_card_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+                    </span>
+                    <a href="">Transactions</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="physician-settings grid grid-cols-10">
+            <div class="physician-info col-span-8 " >
+                <figure class="flex gap-2 mt-3">
+                    <img src="./assets/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc@2x.png" width="50px" height="50px" alt="">
+                    <figcaption>
+                        <h2 style="color: #072635;" class="font-bold">Dr. Jose Simmons</h2>
+                        <p>General Practitioner</p>
+    
+                    </figcaption>
+                </figure>
+    
+            </div>
+            <div class="settings-menu-container col-span-2 flex gap-2 mt-3 justify-end mr-3">
+                <span class="icon">
+                    <img src="./assets/settings_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+    
+                </span>
+                <span class="menu">
+                    <img src="./assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" alt="">
+    
+                </span>
+            </div>
+    
+           </div>
+
+       </div>
+
+       
+        
+        
+    </header>
+
+    <main class="grid grid-cols-10">
+        <section class="sidebar-left col-span-2  mt-5 ml-5" style="background-color: white; border: 2px solid white; border-radius: 15px;">
+            <div class=" search flex gap-2 justify-between p-2 mt-2">
+                <h2 class="font-bold">Patients</h2>
+                <span>
+                    <img src="./assets/search_FILL0_wght300_GRAD0_opsz24.svg" alt="" class="mr-2">
+                </span>
+            </div>
+            <section class="patients p-4">
+                
+            </section>
+
+
+
+        </section>
+        <section class="patient-details col-span-8 grid grid-cols-10">
+        <section class="diagnostic-details col-span-7 mt-5 mr-3 ml-3" >
+
+            <div style="background-color: white; border-radius: 15px;" class="p-4">
+                <h2 class="font-bold">Diagnosis History</h2>
+
+            <div class="chart">
+                    <canvas id="myChart"></canvas>    
+            </div>
+            <div class="measurement m-4 grid grid-cols-9 gap-4" >
+                <div class="respiratory-rate col-span-3 pl-2 pb-2" style="background-color: #E0F3FA; border-radius: 15px;">
+                    <div class="icon mt-2" >
+                        <img src="./assets/respiratory rate.svg" style="border-radius: 50%; background-color: white; " alt="">
+                    </div>
+                    <div class="m-3">
+                        <p>Respiratory rate</p>
+                        <h3 class="font-bold respiratory_rate">20 bpm</h3>
+
+                    </div>
+
+                    <p class="ml-3 rr_status">Normal</p>
+                </div>
+                <div class="respiratory-rate col-span-3 pl-2 pb-2" style="background-color: #FFE6E9; border-radius: 15px;">
+                    <div class="icon mt-2" >
+                        <img src="./assets/temperature.svg" style="border-radius: 50%; background-color: white; " alt="">
+                    </div>
+                    <div class="m-3">
+                        <p >Temperature</p>
+                        <h3 class="font-bold temperature">98.6 &deg;F</h3>
+
+                    </div>
+
+                    <p class="ml-3 temp-status">Normal</p>
+                </div>
+                <div class="respiratory-rate col-span-3 pl-2 pb-2" style="background-color: #FFE6F1; border-radius: 15px;">
+                    <div class="icon mt-2" >
+                        <img src="./assets/HeartBPM (1).svg" style="border-radius: 50%; background-color: white; " alt="">
+                    </div>
+                    <div class="m-3">
+                        <p>Heart rate</p>
+                        <h3 class="font-bold heart-rate">78 bpm</h3>
+
+                    </div>
+                    <div  >
+                        <span class="flex" >
+                            <img src="./assets/ArrowDown.svg" alt=""> 
+                            <p class="ml-5 heart-rate-status">Lower than average</p>  
+                        </span>
+                        
+                        
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            </div>
+
+            <div class="diagnostic-list mt-4 p-4" style="background-color: white; ">
+                <h2 class="font-bold">Diagnostic list</h2>
+                <div class="diagnosis_container">
+                    <div class="diagnostic-list-titles flex gap-4 justify-between p-4">
+                        <h2 class="font-bold">Diagnosis</h2>
+                        <h2 class="font-bold">Description</h2>
+                        <h2 class="font-bold mr-6">status</h2>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+            
+        </section>
+
+    
+
+        
+        <section class="sidebar-right col-span-3 mt-5 mr-3">
+            <div  class="p-4" style="background-color: white; border: 2px solid white; border-radius: 15px;">
+                <article class="general-info">
+                    <figure class="flex flex-col gap-2 justify-center">
+                        <img class="selected-patient-image"    src="./assets/Layer 2.png" alt="">
+                        <figcaption class="mt-2 text-center">
+                            <h2 class="font-bold selected-patient-name">Jessica Taylor</h2>
+                        </figcaption>
+                    </figure>
+                    
+                </article>
+    
+                <article class="info">
+                    <div class="birth-info  mt-2 flex gap-2">
+                        <span class="icon ">
+                            <img src="./assets/BirthIcon.svg" alt="">
+                        </span>
+                        <div class="flex flex-col ">
+                            <p >Date of birth</p>
+                            <p class="selected-patient-birth-date" style="font-size: small; font-weight: bold;">AUGUST 23,1996</p>
+                        </div>
+    
+                    </div>
+                    <div class="birth-info  mt-2 flex gap-2">
+                        <span class="icon">
+                            <img src="./assets/FemaleIcon.svg" alt="">
+                        </span>
+                        <div class="flex flex-col ">
+                            <p >Gender</p>
+                            <p class="selected-patient-gender" style="font-size: small; font-weight: bold;">Female</p>
+                        </div>
+    
+                    </div>
+                    <div class="birth-info  mt-2 flex gap-2">
+                        <span class="icon">
+                            <img src="./assets/PhoneIcon.svg" alt="">
+                        </span>
+                        <div class="flex flex-col ">
+                            <p >Contact Info</p>
+                            <p class="selected-patient-contact" style="font-size: small; font-weight: bold;">(415) 555-1234</p>
+                        </div>
+    
+                    </div>
+                    <div class="birth-info  mt-2 flex gap-2">
+                        <span class="icon">
+                            <img src="./assets/PhoneIcon.svg" alt="">
+                        </span>
+                        <div class="flex flex-col ">
+                            <p >Emergency Contacts</p>
+                            <p  class="selected-patient-emergency-contact" style="font-size: small; font-weight: bold;">(415) 555-5678</p>
+                        </div>
+    
+                    </div>
+                    <div class="birth-info  mt-2 flex gap-2">
+                        <span class="icon">
+                            <img src="./assets/InsuranceIcon.svg" alt="">
+                        </span>
+                        <div class="flex flex-col ">
+                            <p >Insurance Provider</p>
+                            <p class="selected-patient-insurance-provider" style="font-size: small; font-weight: bold;">Sunrise Health Assurance</p>
+                        </div>
+    
+                    </div>
+                    
+                </article>
+
+            </div>
+
+            <div class="p-4 mt-4" style="background-color: white; border: 2px solid white; border-radius: 15px;">
+                <h2 class="font-bold">Lab Results</h2>
+                <div class="lab-info pl-4">
+                </div>
+
+            </div>
+            
+        </section>
+
+    </section>
+
+        
+        
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./index.js"></script>
+
+</body>
+</html>

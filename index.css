@@ -1,0 +1,184 @@
+/*   ===========RESET PARAMETERS==================
+ */
+
+ :root {
+    --loader-text-color: #f6e9fe;
+    --loader-dot-color: #A51FF6;
+    --loader-bg: #100319;
+}
+
+ *, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+   overflow-y: scroll;
+   overflow-x: hidden;
+
+}
+
+body{
+    line-height: 1.5;
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+img,picture,video,canvas{
+    display: block;
+    max-width: 100%;
+}
+
+input,button,textarea,select{
+    font: inherit;
+}
+
+p,h1.h2,h3,h4,h5,h6{
+    overflow-wrap: break-word;
+}
+
+/* ==============Header================== */
+
+
+
+header{
+    background-color: white; 
+    display:grid ;
+    grid-template-columns: 20% 80%;
+    gap:4;
+    justify-content: center;
+     align-items: center;
+    width: 95%; border-radius: 25px; 
+    height: 5rem;
+    position: relative;
+}
+
+.navigation{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 4;
+}
+
+
+nav li:hover{
+    background-color: #01F0D0;
+    border-radius: 15px;
+    cursor: pointer;
+    
+
+}
+
+/* ===================MAIN-SECTIONCSS================ */
+
+
+.patient-info{
+    display: flex;
+     gap:2rem; 
+     margin-top:2rem;
+}
+
+.patient-info img{
+    width:"50px";
+     height: "50px";
+}
+
+.patient-info h2{
+    font-weight: bold;
+}
+
+.specimen-info{
+   display:flex ;  
+   gap: 4;
+   justify-content: space-between;          
+   margin-top:2rem;
+
+} 
+
+.diagnosis{
+    display: grid;
+    gap: 4;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+} 
+
+.diagnosis div{
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+/* 
+===============MEDIA QUERIES=================== */
+
+@media only screen and (max-width: 500px){
+    .logo{
+        width: 30%;
+      }
+
+      .navigation{
+        margin-top: 2rem;
+      }
+
+      .patient-details{
+    grid-column: span 7 / span 7;
+      }
+
+      .sidebar-left{
+        grid-column: span 3 / span 3;
+
+      }
+
+      
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    header{
+        display:block;
+        width: 100%;
+        height: 7rem;
+      }
+
+      .navigation{
+        grid-template-columns: 50% 40%;
+        gap: 4;
+        
+      }
+
+
+      .physician-settings{
+        position: absolute;
+        top:0;
+        right: 0;
+      }
+
+      .patient-details{
+        display: block;
+      }
+
+
+
+      .sidebar-right{
+        margin-left: 1rem;
+      }
+
+      .search{
+        display: block;
+      }
+
+
+}
+
+@media (min-width: 730px) and (max-width: 1200px) {
+    
+  }
+
+  @media only screen and (max-width: 1300px) {
+    .patient-info{
+        display: block;
+    }
+
+}
+  
